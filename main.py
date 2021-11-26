@@ -44,7 +44,7 @@ parser = argparse.ArgumentParser(
 )
 default_dataset_dir = Path.home() / ".cache" / "torch" / "datasets"
 parser.add_argument("--dataset-root", default=default_dataset_dir)
-parser.add_argument("--log-dir", default=Path("logs"), type=Path)
+parser.add_argument("--log-dir", default=Path("logs-DCASE"), type=Path)
 parser.add_argument("--learning-rate", default=1e-1, type=float, help="Learning rate")
 parser.add_argument("--sgd-momentum", default=0.9, type=float, help="SGD Momentum parameter Beta")
 parser.add_argument(
@@ -545,7 +545,7 @@ def get_summary_writer_log_dir(args: argparse.Namespace) -> str:
         untangle in TB).
     """
     tb_log_dir_prefix = (
-      f"CNN_bn_"
+      f"CNN_DCASE_bn_"
       f"bs={args.batch_size}_"
       f"lr={args.learning_rate}_"
       f"momentum={args.sgd_momentum}_" +
